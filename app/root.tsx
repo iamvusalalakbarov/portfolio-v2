@@ -6,8 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
 import type { Route } from "./+types/root";
+import Header from "~/components/Header";
+import Footer from "~/components/Footer";
 import "./app.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -39,8 +40,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className="body-wrapper h-svh flex items-center justify-center bg-primary-inverted antialiased">
+        <main className="w-full h-full flex flex-col rounded-lg bg-slate-950 border border-slate-700">
+          <Header />
+          {children}
+          <Footer />
+        </main>
         <ScrollRestoration />
         <Scripts />
       </body>
