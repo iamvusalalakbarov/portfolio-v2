@@ -10,7 +10,7 @@ const CTALink: React.FC<ICTALinkProps> = (props) => {
   return (
     <Link
       to={props.href}
-      className="text-sm text-rose-300 underline transition-all duration-500 ease-in-out hover:text-rose-200"
+      className="text-sm text-rose-300 underline custom-transition hover:text-rose-200"
     >
       {props.children}
     </Link>

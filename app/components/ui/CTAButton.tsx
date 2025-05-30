@@ -10,7 +10,7 @@ interface ICTAButtonProps {
 
 const CTAButton: React.FC<ICTAButtonProps> = (props) => {
   const baseClasses =
-    "py-2.5 px-3 rounded-lg text-sm cursor-pointer transition-all duration-500 ease-in-out";
+    "py-2.5 px-3 rounded-lg text-sm cursor-pointer custom-transition";
   const variantClasses = {
     [ButtonVariant.Primary]:
       "bg-orange-300 text-primary-inverted hover:bg-orange-200",

@@ -139,4 +139,13 @@
 html,
 body {
   font-family: "Fira Code", monospace;
+  @apply text-slate-400;
+}
+
+.body-wrapper {
+  @apply max-w-[1780px] mx-auto p-4 lg:p-8 xl:p-12 2xl:p-16;
+}
+
+.custom-transition {
+  @apply transition-all duration-500 ease-in-out;
 }
