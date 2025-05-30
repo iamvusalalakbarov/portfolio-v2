@@ -131,6 +131,9 @@
   --color-yellow-800: #894B00;
   --color-yellow-900: #733E0A;
   --color-yellow-950: #432004;
+
+  /* Other colors */
+  --color-primary-inverted: #020618;
 }
 
 html,
