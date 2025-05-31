@@ -41,11 +41,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="body-wrapper h-svh flex items-center justify-center bg-primary-inverted antialiased">
-        <main className="w-full h-full flex flex-col rounded-lg bg-slate-950 border border-slate-700">
+        <div className="w-full h-full flex flex-col rounded-lg bg-slate-950 border border-slate-700">
           <Header />
-          {children}
+          <main className="w-full h-full lg:scale-95 xl:scale-90 2xl:scale-100">
+            {children}
+          </main>
           <Footer />
-        </main>
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
