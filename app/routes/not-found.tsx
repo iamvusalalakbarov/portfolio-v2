@@ -1,8 +1,6 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import style from "react-syntax-highlighter/dist/esm/styles/prism/one-dark";
+import CodeSnippet from "~/components/ui/CodeSnippet";
 
-export default function NotFound() {
-  const codeString = `const page = findPage('you-were-looking-for');
+const codeStringDesktop = `const page = findPage('you-were-looking-for');
 
 if (!page) {
   console.log("Oops! Looks like you took a wrong turn in the codebase.");
@@ -19,32 +17,27 @@ if (!page) {
 
 redirect('home');`;
 
-  const customStyle = {
-    ...style,
-    'pre[class*="language-"]': {
-      ...style['pre[class*="language-"]'],
-      margin: 0,
-      padding: 0,
-      background: "transparent",
-    },
-    'code[class*="language-"]': {
-      ...style['code[class*="language-"]'],
-      background: "transparent",
-    },
-  };
+const codeStringMobile = `throw new Error(
+"404: PageNotFoundError 😢"
+);
 
+goBack() || goHome();`;
+
+export default function NotFound() {
   return (
-    <div className="h-full flex justify-center items-center">
-      <div className="flex justify-center items-start gap-x-[146px]">
+    <div className="h-full flex px-6 lg:px-0 lg:justify-center items-center">
+      {/* Desktop */}
+      <div className="hidden lg:flex justify-center items-start gap-x-[146px]">
         <img src="/images/404.svg" alt="404" />
 
-        <SyntaxHighlighter
-          language="javascript"
-          style={customStyle}
-          showLineNumbers
-        >
-          {codeString}
-        </SyntaxHighlighter>
+        <CodeSnippet codeString={codeStringDesktop} showLineNumbers />
+      </div>
+
+      {/* Mobile */}
+      <div className="space-y-10 lg:hidden">
+        <img src="/images/404-mobile.svg" alt="404" />
+
+        <CodeSnippet codeString={codeStringMobile} />
       </div>
     </div>
   );
